@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  background-color: #403d51;
+}
+
+a {
+  text-decoration: none;
+  color: #6c5ecf;
+}
+
+a:hover {
+  border-bottom: 1px solid #8879ff;
+  color: #8879ff;
+}
+
+.app-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  padding: 3em;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  background-color: #1f1d2b;
+  border-radius: 0 25px 0 25px;
+}
+
+.form-container .title {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+  margin-bottom: 2em;
+}
+
+.form input {
+  background: none;
+  outline: none;
+  border-bottom: 1px solid #d2d3d5;
+  border-right: none;
+  padding: .75em;
+  display: block;
+  color: #d2d3d5;
+  margin-bottom: 1.5em;
+  width: 100%;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  -webkit-transition: border-bottom 500ms ease, opacity 500ms ease;
+  transition: border-bottom 500ms ease, opacity 500ms ease;
+}
+
+.form input:hover,
+.form input:active,
+.form input:focus {
+  border-bottom: 1px solid #ffffff;
+  opacity: 1;
+  color: #ffffff;
+}
+
+.form button {
+  padding: 1em;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background: #6c5ecf;
+  color: #d2d3d5;
+  margin-bottom: 1.8em;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  transition: color 200ms ease-in-out, background 200ms ease-in-out;
+}
+
+.form button:hover {
+  color: #ffffff;
+  cursor: pointer;
+  background: #8879ff;
+}
+/*# sourceMappingURL=App.css.map */

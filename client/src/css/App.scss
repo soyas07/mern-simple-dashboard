@@ -1,0 +1,32 @@
+@import './_variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $body-font;
+    color: $title-color;
+    font-size: 16px;
+    background-color: $bg-color;
+}
+
+a {
+    text-decoration: none;
+    color: $button-color;
+}
+
+a:hover {
+    border-bottom: 1px solid #8879ff;
+    color: #8879ff;
+}
+
+
+.app-container {
+    @include flex;
+    height: 100vh;
+}
+
+@import './_form'
