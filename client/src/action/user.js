@@ -1,11 +1,12 @@
 import * as api from '../api'
-import { REGISTER_USER, LOGIN_USER } from '../constants'
+import { REGISTER_USER, LOGIN_USER, ERROR_LOGIN, ERROR_REGISTER } from '../constants'
 
 export const registerUser = (userData) => async (dispatch) => {
     try {
-        const user = await api.registerUser(userData)
+        const { data } = await api.register(userData)
 
-        dispatch({ type: REGISTER_USER, payload: user })
+        if (data.status === 'error') dispatch({ type: ERROR_REGISTER, payload: data })
+        else dispatch({ type: REGISTER_USER, payload: data })
     } catch (error) {
         console.log(error);
     }
@@ -13,9 +14,13 @@ export const registerUser = (userData) => async (dispatch) => {
 
 export const loginUser = (userData) => async (dispatch) => {
     try {
-        const { data } = await api.loginUser(userData)
+        const { data } = await api.login(userData)
 
-        dispatch({ type: LOGIN_USER, payload: data })
+        if (data.status === 'error') dispatch({ type: ERROR_LOGIN, payload: data })
+        else {
+            localStorage.setItem('userToken', data.userToken)
+            dispatch({ type: LOGIN_USER, payload: data })
+        }
     } catch (error) {
         console.log(error);
     }

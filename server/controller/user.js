@@ -8,16 +8,16 @@ export const registerUser = async (req, res) => {
         const { firstName, lastName, email, password } = req.body
         const hashPass = await bcrypt.hash(password, 10)
 
-        const user = userModel.create({
+        const user = await userModel.create({
             firstName,
             lastName,
             email,
             password: hashPass
         })
 
-        res.status(201).json(user)
+        res.status(201).json({ status: 'ok', message: 'User Created', user})
     } catch (error) {
-        console.log(error);
+        res.json({ status: 'error', message: 'User Already Exist!' })
     }
 }
 
@@ -37,6 +37,6 @@ export const loginUser = async (req, res) => {
         }
         else return res.json({ status: 'error', message: 'Invalid Credentials' })
     } catch (error) {
-        
+        console.log(error);
     }
 }
