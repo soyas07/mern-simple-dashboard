@@ -1,4 +1,5 @@
 import React from 'react';
+import TrendList from './TrendList';
 
 function Main() {
     return (
@@ -6,6 +7,8 @@ function Main() {
         <form className='search-bar'>
           <input type="text" placeholder='Search' />
         </form>
+        <h1>Trending</h1>
+        <TrendList />
       </main>
     )
 

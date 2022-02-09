@@ -14,10 +14,10 @@ function SideNav() {
         <div className="left-content">
           <img src={pic} alt="display picture" id="profile-pic" />
           <p>Thomas</p>
-          <span style={{ position: 'relative',top: '3px', transform: 'scale(1.1)', marginLeft: '1em', color: '#454350'}}><IoIosArrowDown /></span>
+          <span style={{ position: 'relative',top: '3px', transform: 'scale(1.1)', marginLeft: '1em', color: '#d2d3d5'}}><IoIosArrowDown /></span>
         </div>
         
-        <span style={{ transform: 'scale(1.4)', color: '#454350' }}><HiBell /></span>
+        <span style={{ transform: 'scale(1.4)', color: '#d2d3d5' }}><HiBell /></span>
         {/* <button onClick={logout}>logout</button> */}
       </div>
       

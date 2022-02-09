@@ -8,6 +8,8 @@ import Main from './Main';
 import SideNav from './SideNav';
 import { Link } from 'react-router-dom';
 
+import skateBg from '../../assets/skate-bg.jpg'
+
 function Dashboard() {
 
     const dispatch = useDispatch()

@@ -1,8 +1,16 @@
 .dashboard-container {
     width: 100%;
     display: grid;
-    grid-template-columns: .7fr 2fr 1fr;
+    grid-template-columns: .5fr 2fr 1fr;
     grid-gap: 20px;
+    background-color: $bg-color;
+    // background-image: url('../assets/skate-bg.jpg');
+    // background-repeat: no-repeat;
+    // background-position: 83% -20%;
+    // background-size: 580px 380px;
+    // background-blend-mode: hard-light;
+    // box-shadow: 5px 5px 5px 5px rgba(31,29,43,255);
+
 }
 
 header {
@@ -12,6 +20,58 @@ header {
         font-family: $logo-font;
         font-weight: 500;
         font-size: 1.8rem;
+        margin-bottom: 1.5em;
+    }
+    h2 {
+        font-size: 0.8rem;
+        letter-spacing: 0.2rem;
+        color: $text-color;
+        margin-bottom: 1.5em;
+    }
+    ul{
+        list-style: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $text-color;
+        margin-bottom: 3em;
+        li {
+            padding: 0.5em 0;
+            margin-bottom: 1em;
+            transition: color 0.2s ease;
+            i {
+                background: #353340;
+                color: $text-color;
+                padding: 0.5em 0.7em;
+                border-radius: 10px;
+                margin-right: 0.8em;
+            }
+        }
+
+        li:hover {
+            cursor: pointer;
+            color: white;
+            i {
+                background: #22b07d;
+                color: white;
+                transition: all 0.2s ease;
+            }
+        }
+
+        .active {
+            background: #22b07d;
+            color: white;
+        }
+        .active-tab {
+            color: white;
+        }
+    }
+    hr {
+        width: 60%;
+        border: none;
+        height: 1px;
+        background-color: $text-color;
+        opacity: 0.7;
+        margin-bottom: 3em;
     }
 }
 
@@ -20,6 +80,7 @@ main {
     border: 1px solid white;
     height: 100vh;
     .search-bar {
+        margin-bottom: 2em;
         input {
         width: 80%;
         border: none;
@@ -28,12 +89,28 @@ main {
         border-radius: 10px;
         outline: none;
         color: $title-color;
+        opacity: 0.7;
+        transition: transform 0.2s ease, opacity 0.3s ease-in-out;
         }
+        input:focus {
+            transform: scale(1.015);
+            opacity: 1;
+        }
+    }
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .trend-list {
+        background-color: #252836;
+        border-radius: 15px;
+        padding: 1.5em;
     }
 }
 
 #side-nav-container {
-  padding: 1.7em;
+  padding: 1.7em 2.2em;
   border: 1px solid white;
 
   .profile-header {
@@ -42,7 +119,7 @@ main {
     .left-content {
         display: flex;
         align-items: center;
-        width: 60%;
+        width: 40%;
         margin-left: auto;
         p {
             margin-left: 1em;

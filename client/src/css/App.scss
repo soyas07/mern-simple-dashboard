@@ -10,7 +10,7 @@ body {
     font-family: $body-font;
     color: $title-color;
     font-size: 16px;
-    background-color: $bg-color;
+    
 }
 
 a {
@@ -27,6 +27,7 @@ a:hover {
 .app-container {
     @include flex;
     height: 100vh;
+    background-color: $container-color;
 }
 
 @import './_form';
