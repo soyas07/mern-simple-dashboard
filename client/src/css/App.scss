@@ -26,7 +26,7 @@ a:hover {
 
 .app-container {
     @include flex;
-    height: 100vh;
+    min-height: 100vh;
     background-color: $container-color;
 }
 

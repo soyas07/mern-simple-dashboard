@@ -1,7 +1,7 @@
 .dashboard-container {
     width: 100%;
     display: grid;
-    grid-template-columns: .5fr 2fr 1fr;
+    grid-template-columns: .5fr 2fr .75fr;
     grid-gap: 20px;
     background-color: $bg-color;
     // background-image: url('../assets/skate-bg.jpg');
@@ -15,7 +15,7 @@
 
 header {
     padding: 1.7em;
-    border: 1px solid white;
+    // border: 1px solid white;
     .logo {
         font-family: $logo-font;
         font-weight: 500;
@@ -77,15 +77,15 @@ header {
 
 main {
     padding: 1.7em;
-    border: 1px solid white;
-    height: 100vh;
+    // border: 1px solid white;
+    min-height: 100vh;
     .search-bar {
         margin-bottom: 2em;
         input {
         width: 80%;
         border: none;
         background: rgba(53, 51, 64, 255);
-        padding: 0.8em;
+        padding: 1.2em;
         border-radius: 10px;
         outline: none;
         color: $title-color;
@@ -93,7 +93,7 @@ main {
         transition: transform 0.2s ease, opacity 0.3s ease-in-out;
         }
         input:focus {
-            transform: scale(1.015);
+            transform: scale(1.02);
             opacity: 1;
         }
     }
@@ -106,12 +106,72 @@ main {
         background-color: #252836;
         border-radius: 15px;
         padding: 1.5em;
+        display: flex;
+        margin-bottom: 1em;
+        p {
+            font-size: 3rem;
+            font-weight: 800;
+            position: absolute;
+            margin-left: -1.1em;
+            color: #353340;
+            opacity: 0.8;
+        }
+
+        .dp-image {
+                min-height: 170px;
+                min-width: 250px;
+                width: 250px;
+                height: 170px;
+                margin-right: 2em;
+                
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0px 0px 5px 2px #1a1c25;
+            }
+        }
+
+        .title-content {
+            h2 {
+                font-weight: 500;
+                margin-bottom: 1em;
+            }
+            i {
+                color: red;
+                margin-right: 1em;
+                transition: transform ease 0.5s;
+            }
+            i:hover{
+                cursor: pointer;
+            }
+            span {
+                margin-right: 1em;
+            }
+        }
+
+        .like {
+            width: 2%;
+            margin-left: auto;
+            i {
+                background-color: #3a3d4a;
+                padding: .4em;
+                border-radius: 100%;
+                color:#808191;
+                border: #808191;
+            }
+            i:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
 
 #side-nav-container {
   padding: 1.7em 2.2em;
-  border: 1px solid white;
+//   border: 1px solid white;
 
   .profile-header {
     display: flex;
@@ -121,6 +181,7 @@ main {
         align-items: center;
         width: 40%;
         margin-left: auto;
+        margin-right: 3em;
         p {
             margin-left: 1em;
         }
@@ -129,6 +190,34 @@ main {
         width: 35px;
         height: 35px;
         border-radius: 100%;
+    }
+    #notify-bell {
+        margin-left: 1em;
+    }
+    #down-arrow {
+        position: relative;
+        top: 3px;
+        transform: scale(1.1);
+        margin-left: 1em;
+        color: #d2d3d5;
+        transition: all ease 0.2s;
+    }
+    #down-arrow:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+        color: white;
+    }
+    .dropdown-logout {
+        display: none;
+        position: absolute;
+        top: 1.5em;
+        right: -2.4em;
+        width: 100px;
+        height: 50px;
+        background-color: #353340;
+    }
+    .active-logout {
+        display: block;
     }
   }
 }

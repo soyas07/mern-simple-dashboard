@@ -1,24 +1,31 @@
 import React from 'react';
 import { FcLike } from 'react-icons/fc'
+import { FcLikePlaceholder } from 'react-icons/fc'
 import { GrView } from 'react-icons/gr'
+import skateBg from '../../assets/skate-bg.jpg'
+import useDashboard from '../../hooks/useDashboard';
 
-function TrendList() {
+function TrendList({dashState, index}) {
+
+    const { isEnabled, checkLike } = useDashboard()
+    console.log(dashState);
+
     return (
         <div className='trend-list'>
-            <span>01</span>
+            <p id='trend-number'>0{index}</p>
             <div className="dp-image">
-                <img src="" alt="" />
+                <img src={dashState && dashState.image} alt="" />
             </div>
             <div className="title-content">
-                <h2>How to do Basic Jumping and how to landing safely</h2>
+                <h2>{dashState.title}</h2>
                 <i><GrView /></i>
-                <span>41,231 views</span>
-                <i><FcLike /></i>
-                <span>41,212 likes</span>
+                <span>{dashState.views} views</span>
+                <i>{isEnabled ? <FcLike onClick={checkLike} /> : <FcLikePlaceholder onClick={checkLike}/>}</i>
+                <span>{dashState.likes} likes</span>
 
             </div>
             <div className="like">
-                <i><FcLike /></i>
+                <i>{isEnabled ? <FcLike onClick={checkLike} /> : <FcLikePlaceholder onClick={checkLike}/>}</i>
             </div>
         </div>
     )

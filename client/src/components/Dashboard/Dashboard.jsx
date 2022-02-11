@@ -9,12 +9,14 @@ import SideNav from './SideNav';
 import { Link } from 'react-router-dom';
 
 import skateBg from '../../assets/skate-bg.jpg'
+import loader from '../../assets/loader.svg'
 
 function Dashboard() {
 
     const dispatch = useDispatch()
     const dashboard = useSelector(state => state.dashboard)
-
+    const user = useSelector(state => state.user)
+    
     useEffect(() => {
         const token = localStorage.getItem('userToken')
         if (token) {
@@ -26,6 +28,7 @@ function Dashboard() {
     }, []);
 
     if (dashboard.status === 'ok') {
+        
         return (
             <section className='dashboard-container'>
                 <Header />
@@ -33,9 +36,13 @@ function Dashboard() {
                 <SideNav />
             </section>
         )
-    } else {
-        return <Link to="/login"><button className='btn-primary'>Login</button></Link>
+    
+    } else if (user.isLoading || dashboard.isLoading) {
+        return <div><img src={loader} alt="" /></div>
     }
+    
+    return <Link to="/login"><button className='btn-primary'>Login</button></Link>
+    
     
 }
 

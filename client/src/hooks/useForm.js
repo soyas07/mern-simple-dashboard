@@ -40,6 +40,7 @@ function useRegister() {
 
     const logout = () => {
         localStorage.removeItem('userToken')
+        localStorage.removeItem('username')
         navigate('../')
         window.location.reload(true)
     }

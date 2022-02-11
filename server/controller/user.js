@@ -25,7 +25,7 @@ export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body
         const user = await userModel.findOne({ email })
-
+       
         if(!user) res.json({ status: 'error', message: 'Invalid Credentials' })
 
         // check if the password is valid
@@ -33,7 +33,7 @@ export const loginUser = async (req, res) => {
 
         if(isValidPass){
             const token = jwt.sign({user}, process.env.SECRET_KEY)
-            return res.json({ status: 'ok', userToken: token })
+            return res.json({ status: 'ok', userToken: token, username: user.firstName })
         }
         else return res.json({ status: 'error', message: 'Invalid Credentials' })
     } catch (error) {
